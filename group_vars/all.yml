@@ -1,20 +1,20 @@
 ---
-helper_vm_ip: 192.168.86.180
+helper_vm_ip: 192.168.22.1
 bootstrap_ignition_url: "http://{{helper_vm_ip}}:8080/ignition/bootstrap.ign"  
 config:
-  base_domain: example.com
-  cluster_name: ocp4
-  installer_ssh_key: "{{ lookup('file', '~/.ssh/ocp4.pub') }}"
-  pull_secret: {"auths": ...}
+  base_domain: revoweb.home
+  cluster_name: vmw
+  installer_ssh_key: "{{ lookup('file', '~/.ssh/vmw.pub') }}"
+  pull_secret: {"auths": {"cloud.openshift.com":{"auth":"b3BlbnNoaWZ0LXJlbGVhc2UtZGV2K3Jldm9tYW4xc3pobzRsYmx6bnhwbWdobmZscGZoa3VxdmU6OVlOUVA1TE4zRFNMQzIzVEhUWFZPVDlMSlBWRTFTRVhSMjdZMkhOS1paRjI2VElVNEgyQTlIWUZIM0hJQkVIRQ==","email":"nrevo@redhat.com"},"quay.io":{"auth":"b3BlbnNoaWZ0LXJlbGVhc2UtZGV2K3Jldm9tYW4xc3pobzRsYmx6bnhwbWdobmZscGZoa3VxdmU6OVlOUVA1TE4zRFNMQzIzVEhUWFZPVDlMSlBWRTFTRVhSMjdZMkhOS1paRjI2VElVNEgyQTlIWUZIM0hJQkVIRQ==","email":"nrevo@redhat.com"},"registry.connect.redhat.com":{"auth":"Njk5NDkzfHVoYy0xU1poTzRMYmxaTnhwTUdIbkZscEZoS1VRVkU6ZXlKaGJHY2lPaUpTVXpVeE1pSjkuZXlKemRXSWlPaUl3WVRNNFlUVTJObU0zTURZME5tUTVPV1ExTkdJeE9ESTBZamszWW1NMk5DSjkuUDBQX3lJeEIwWUtvVEdXMXpIVXZuUHJoRS0xU2FCUzZBWlRDWm5iTzR4eC1BR2hfV0swaUNtbkppZ01nQzVjeHczUnZsU3VDeG1RV09fcGhwM1A3cjEwSmNhdE5zdUZSa29ON0w3NTg2c2plVjdaZWgtYW56SWlnT1Q5d0Y3WWJHQ0pPdlFPaU1xN25oODctR01CQ2YtbVhTUklDbmhHQl9ub2NFV0xZeXV4SUhTa2pvOVlaekZ5X0szUmMzdGpCckRmRnp4YUR1aERGRVktcUdveHVYT2VnX2tKNTZoT3ZUM3cyN1NJVTFUSmJYVUhpUDlKa2laRms2S2VEVUVQUHRneGw1REd1VkFyUmplaEFPRGVGUi1LQW9aWlV5SGJ5TDZMdmpGZ2JiYUw0R0kyaDJydXREa1VXX1BSbG5TOWtrdllzSk1BM2o0V1gxdGhZcU9rQ0VXYkozZlk1LWRzSFZxTVc5S3dKWHNGNUYtazl6eTVObWtZZ01hS096c00zX2pfUHplUFl2TkFlWVdGMEpKeTR5OVRCLWFwTHlYUGRsNm1HZmZ1LTZLWF9JWEVRR2x0U1F3VXJEd1pPczlfLVg4QkZaYjBWNTc2RDhycV9ILXBwMEpWT2Y4emgxLUhXSjM4cGRrMHh0VjJyMVg1N0lWamxqX25jZnpHTE9yY2ktWm1idWo0d1d1Mml4bjN3OVQtV1d4NWZsV3RlTGd4MVVVa2x4YnpLVl9OTGdiVTc5UWFPcGlLbnpVd1BlSW1uOXVsaWdHVXBMSktaNkNzaFpHVGM2aDFEbnpKTkRFU0tMOC0wUjFFR2Rkc04wM0s0RVBhQnEyMVRjWDFoQVdXVnU5d3BPTGlBU3JweHhhWGoxVElPZFAtR19UOVNhOTFfVFdVeVNZVzVrdVU=","email":"nrevo@redhat.com"},"registry.redhat.io":{"auth":"Njk5NDkzfHVoYy0xU1poTzRMYmxaTnhwTUdIbkZscEZoS1VRVkU6ZXlKaGJHY2lPaUpTVXpVeE1pSjkuZXlKemRXSWlPaUl3WVRNNFlUVTJObU0zTURZME5tUTVPV1ExTkdJeE9ESTBZamszWW1NMk5DSjkuUDBQX3lJeEIwWUtvVEdXMXpIVXZuUHJoRS0xU2FCUzZBWlRDWm5iTzR4eC1BR2hfV0swaUNtbkppZ01nQzVjeHczUnZsU3VDeG1RV09fcGhwM1A3cjEwSmNhdE5zdUZSa29ON0w3NTg2c2plVjdaZWgtYW56SWlnT1Q5d0Y3WWJHQ0pPdlFPaU1xN25oODctR01CQ2YtbVhTUklDbmhHQl9ub2NFV0xZeXV4SUhTa2pvOVlaekZ5X0szUmMzdGpCckRmRnp4YUR1aERGRVktcUdveHVYT2VnX2tKNTZoT3ZUM3cyN1NJVTFUSmJYVUhpUDlKa2laRms2S2VEVUVQUHRneGw1REd1VkFyUmplaEFPRGVGUi1LQW9aWlV5SGJ5TDZMdmpGZ2JiYUw0R0kyaDJydXREa1VXX1BSbG5TOWtrdllzSk1BM2o0V1gxdGhZcU9rQ0VXYkozZlk1LWRzSFZxTVc5S3dKWHNGNUYtazl6eTVObWtZZ01hS096c00zX2pfUHplUFl2TkFlWVdGMEpKeTR5OVRCLWFwTHlYUGRsNm1HZmZ1LTZLWF9JWEVRR2x0U1F3VXJEd1pPczlfLVg4QkZaYjBWNTc2RDhycV9ILXBwMEpWT2Y4emgxLUhXSjM4cGRrMHh0VjJyMVg1N0lWamxqX25jZnpHTE9yY2ktWm1idWo0d1d1Mml4bjN3OVQtV1d4NWZsV3RlTGd4MVVVa2x4YnpLVl9OTGdiVTc5UWFPcGlLbnpVd1BlSW1uOXVsaWdHVXBMSktaNkNzaFpHVGM2aDFEbnpKTkRFU0tMOC0wUjFFR2Rkc04wM0s0RVBhQnEyMVRjWDFoQVdXVnU5d3BPTGlBU3JweHhhWGoxVElPZFAtR19UOVNhOTFfVFdVeVNZVzVrdVU=","email":"nrevo@redhat.com"}}}
 vcenter:
-  ip: 192.168.86.100
-  datastore: datastore1
-  network: VM Network
-  service_account_username: administrator@vsphere.local
-  service_account_password: something
-  admin_username: administrator@vsphere.local 
-  admin_password: something
-  datacenter: dc
+  ip: vcenter.revoweb.home
+  datastore: kelex-vmware
+  network: DSwitch-VM Network
+  service_account_username: vadmin
+  service_account_password: thegp7tm4k
+  admin_username: administrator@vsphere.revoweb.home 
+  admin_password: esxi-Gp7tm4k01
+  datacenter: revoweb
   vm_power_state: poweredon
   templateName: rhcos-vmware
 download:
@@ -22,16 +22,17 @@ download:
   dependencies_url: https://mirror.openshift.com/pub/openshift-v4/x86_64/dependencies/rhcos/latest/latest
   govc: https://github.com/vmware/govmomi/releases/download/v0.22.1/govc_linux_amd64.gz
 bootstrap_vms: 
-  - { name : "bootstrap", mac: "00:50:56:a8:aa:a1", ip: "192.168.86.181"}
+  - { name : "bootstrap", mac: "00:50:56:83:85:6d", ip: "172.16.21.10"}
 master_vms:
-  - { name : "master0", mac: "00:50:56:a8:aa:a2", ip: "192.168.86.182"}
-  - { name : "master1", mac: "00:50:56:a8:aa:a3", ip: "192.168.86.183"}
-  - { name : "master2", mac: "00:50:56:a8:aa:a4", ip: "192.168.86.184"}
+  - { name : "master0", mac: "00:50:56:83:95:a3", ip: "172.16.21.11"}
+  - { name : "master1", mac: "00:50:56:83:ff:f1", ip: "172.16.21.12"}
+  - { name : "master2", mac: "00:50:56:83:15:5f", ip: "172.16.21.13"}
 worker_vms:      
-  - { name : "worker0", mac: "00:50:56:a8:aa:a5", ip: "192.168.86.185"}
-  - { name : "worker1", mac: "00:50:56:a8:aa:a6", ip: "192.168.86.186"}
-  - { name : "worker2", mac: "00:50:56:a8:aa:a7", ip: "192.168.86.187"}
+  - { name : "worker0", mac: "00:50:56:83:6f:a0", ip: "172.16.21.20"}
+  - { name : "worker1", mac: "00:50:56:83:cf:8e", ip: "172.16.21.21"}
+#  - { name : "worker2", mac: "00:50:56:83:fe:ae", ip: "172.16.21.22"}
+#  - { name : "worker3", mac: "00:50:56:83:44:d1", ip: "172.16.21.23"}
 static_ip:
-  gateway: 192.168.86.1
-  netmask: 255.255.255.0
+  gateway: 172.16.16.1
+  netmask: 255.255.0.0
   network_interface_name: ens192
