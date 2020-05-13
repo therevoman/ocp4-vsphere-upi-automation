@@ -2,6 +2,7 @@
 helper_vm_ip: 192.168.22.1
 bootstrap_ignition_url: "http://{{helper_vm_ip}}:8080/ignition/bootstrap.ign"  
 config:
+  provider: none
   base_domain: revoweb.home
   cluster_name: vmw
   installer_ssh_key: "{{ lookup('file', '~/.ssh/vmw.pub') }}"
